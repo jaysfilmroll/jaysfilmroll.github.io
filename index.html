@@ -2,71 +2,121 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>jays.filmroll</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
     body {
-      font-family: 'Helvetica Neue', sans-serif;
-      background-color: #f8f8f8;
-      color: #333;
       margin: 0;
-      padding: 0;
-      text-align: center;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      padding: 2rem 2rem 4rem 2rem;
     }
     header {
-      padding: 2rem 1rem;
+      text-align: left;
+      max-width: 1200px;
+      margin: 0 auto 2rem auto;
     }
     h1 {
+      font-weight: 700;
       font-size: 2.5rem;
-      margin: 0;
+      margin: 0 0 0.3rem 0;
+      color: #fff;
     }
     p.tagline {
-      font-size: 1rem;
-      color: #666;
-      margin-top: 0.5rem;
+      font-weight: 400;
+      font-size: 1.1rem;
+      margin: 0;
+      color: #fff;
+      opacity: 0.85;
     }
     .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 16px;
-      padding: 1rem;
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 16px;
+    }
+    /* For the second row with 3 images spaced evenly under the gaps */
+    .gallery img:nth-child(n+5) {
+      grid-column: span 1;
+    }
+    /* Make second row images start from column 2 */
+    .gallery img:nth-child(5) {
+      grid-column-start: 2;
+    }
+    .gallery img:nth-child(6) {
+      grid-column-start: 3;
+    }
+    .gallery img:nth-child(7) {
+      grid-column-start: 4;
     }
     .gallery img {
       width: 100%;
       height: auto;
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(255 255 255 / 0.15);
       transition: transform 0.3s ease;
+      cursor: pointer;
     }
     .gallery img:hover {
-      transform: scale(1.03);
+      transform: scale(1.05);
+      box-shadow: 0 4px 16px rgba(255 255 255 / 0.35);
+    }
+    hr {
+      margin: 3rem auto;
+      width: 80%;
+      border: 0;
+      border-top: 1px solid #444;
     }
     footer {
-      margin: 2rem 0;
+      text-align: center;
+      color: #ccc;
+      font-weight: 400;
       font-size: 0.9rem;
-      color: #999;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .gallery img:nth-child(n+5) {
+        grid-column-start: auto !important;
+      }
+    }
+    @media (max-width: 400px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>@jays.filmroll</h1>
-    <p class="tagline">A curated display of my favorite film shots — from @jays.filmroll</p>
+    <h1>jays.filmroll</h1>
+    <p class="tagline">a curated display of my favorite film shots -- from @jays.filmroll</p>
   </header>
 
   <section class="gallery">
-    <!-- Replace these image URLs with your own -->
-    <img src="https://via.placeholder.com/600x800?text=Film+Shot+1" alt="Film Shot 1">
-    <img src="https://via.placeholder.com/600x800?text=Film+Shot+2" alt="Film Shot 2">
-    <img src="https://via.placeholder.com/600x800?text=Film+Shot+3" alt="Film Shot 3">
-    <img src="https://via.placeholder.com/600x800?text=Film+Shot+4" alt="Film Shot 4">
+    <img src="https://via.placeholder.com/400x600?text=Film+Shot+1" alt="Film Shot 1" />
+    <img src="https://via.placeholder.com/400x600?text=Film+Shot+2" alt="Film Shot 2" />
+    <img src="https://via.placeholder.com/400x600?text=Film+Shot+3" alt="Film Shot 3" />
+    <img src="https://via.placeholder.com/400x600?text=Film+Shot+4" alt="Film Shot 4" />
+
+    <img src="https://via.placeholder.com/400x600?text=Film+Shot+5" alt="Film Shot 5" />
+    <img src="https://via.placeholder.com/400x600?text=Film+Shot+6" alt="Film Shot 6" />
+    <img src="https://via.placeholder.com/400x600?text=Film+Shot+7" alt="Film Shot 7" />
   </section>
 
+  <hr />
+
   <footer>
-    &copy; 2025 jays.filmroll
+    &copy; 2025 @jays.filmroll
   </footer>
 
 </body>
