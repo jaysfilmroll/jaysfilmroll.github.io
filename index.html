@@ -100,10 +100,11 @@
     /* Responsive tweaks */
     @media (max-width: 768px) {
       .gallery {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
       }
-
       .gallery img {
+        width: 100%;
+        height: auto;
         grid-column: auto !important;
       }
     }
